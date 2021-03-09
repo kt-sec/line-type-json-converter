@@ -15,12 +15,17 @@ void convertLineTypeJson( std::string inFileName, std::string outFileName, bool 
 
 	std::ifstream infile(inFileName);
 	std::ofstream outfile(outFileName);
+	
+	outfile << "{" << "\n" << "\"data\" : [" << "\n";
 
 	for( std::string line; getline( infile, line ); )
 	{
-    std::cout << line << "\n";
 		outfile << line << "," << "\n";
 	}
+
+	outfile << "]" << "\n" << "}";
+
+	std::cout << "All Done" << "\n";
   
 }
 
